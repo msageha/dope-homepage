@@ -1,169 +1,61 @@
-// src/components/header.tsx
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { Menu, X } from "react-feather";
-import { useState, useEffect } from "react";
-import {
-    Container,
-    Flex,
-    FlexList,
-    Space,
-    NavLink,
-    Button,
-    VisuallyHidden,
-} from "./ui";
-import NavItemGroup from "./nav-item-group";
-import BrandLogo from "./brand-logo";
+import { Logo } from "../components/Logo";
 
 const Header: React.FC = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            layout {
-                header {
-                    id
-                    navItems {
-                        id
-                        navItemType
-                        ... on NavItem {
-                            href
-                            text
-                        }
-                        ... on NavItemGroup {
-                            name
-                            navItems {
-                                id
-                                href
-                                text
-                                description
-                                icon {
-                                    alt
-                                    gatsbyImageData
-                                }
-                            }
-                        }
-                    }
-                    cta {
-                        id
-                        href
-                        text
-                    }
-                }
-            }
-        }
-    `);
-
-    const { navItems, cta } = data.layout.header;
-    const [isOpen, setOpen] = useState(false);
-
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflowY = "hidden";
-        } else {
-            document.body.style.overflowY = "visible";
-        }
-    }, [isOpen]);
-
-    return (
-        <header>
-            <Container className="relative">
-                <Space size={2} />
-                <Flex variant="spaceBetween">
-                    <NavLink to="/">
-                        <VisuallyHidden>Home</VisuallyHidden>
-                        <BrandLogo />
-                    </NavLink>
-                    <nav>
-                        <FlexList gap={4}>
-                            {navItems &&
-                                navItems.map((navItem) => (
-                                    <li key={navItem.id}>
-                                        {navItem.navItemType === "Group" ? (
-                                            <NavItemGroup
-                                                name={navItem.name}
-                                                navItems={navItem.navItems}
-                                            />
-                                        ) : (
-                                            <NavLink to={navItem.href}>
-                                                {navItem.text}
-                                            </NavLink>
-                                        )}
-                                    </li>
-                                ))}
-                        </FlexList>
-                    </nav>
-                    <div>
-                        {cta && <Button to={cta.href}>{cta.text}</Button>}
-                    </div>
-                </Flex>
-            </Container>
-            <Container
-                className={`block relative pt-3 ${isOpen ? "bg-primary" : ""}`}
-            >
-                <Space size={2} />
-                <Flex variant="spaceBetween">
-                    <span
-                        className={`${
-                            isOpen ? "text-background" : "text-primary"
-                        }`}
-                    >
-                        <NavLink to="/">
-                            <VisuallyHidden>Home</VisuallyHidden>
-                            <BrandLogo />
-                        </NavLink>
-                    </span>
-                    <Flex>
-                        <Space />
-                        <div>
-                            {cta && (
-                                <Button
-                                    to={cta.href}
-                                    variant={isOpen ? "reversed" : "primary"}
-                                >
-                                    {cta.text}
-                                </Button>
-                            )}
-                        </div>
-                        <Nudge right={3}>
-                            <InteractiveIcon
-                                title="Toggle menu"
-                                onClick={() => setOpen(!isOpen)}
-                                className={`${
-                                    isOpen ? "text-background" : "text-primary"
-                                }`}
-                            >
-                                {isOpen ? <X /> : <Menu />}
-                            </InteractiveIcon>
-                        </Nudge>
-                    </Flex>
-                </Flex>
-            </Container>
-            {isOpen && (
-                <div className="absolute w-full h-full pt-4 bg-primary">
-                    <nav>
-                        <FlexList responsive variant="stretch">
-                            {navItems?.map((navItem) => (
-                                <li key={navItem.id}>
-                                    {navItem.navItemType === "Group" ? (
-                                        <NavItemGroup
-                                            name={navItem.name}
-                                            navItems={navItem.navItems}
-                                        />
-                                    ) : (
-                                        <NavLink
-                                            to={navItem.href}
-                                            className="block text-background text-lg py-2 px-4"
-                                        >
-                                            {navItem.text}
-                                        </NavLink>
-                                    )}
-                                </li>
-                            ))}
-                        </FlexList>
-                    </nav>
-                </div>
-            )}
-        </header>
-    );
+  return (
+    <header className="mx-auto p-4 md:p-12 items-center justify-between bg-gray-200">
+      <div className="flex items-center justify-around">
+        <div className="w-1/3 md:w-1/6">
+          <a href="/">
+            <Logo />
+          </a>
+        </div>
+        <nav className="hidden gap-16 md:flex text-lg font-semibold">
+          <a
+            href="/"
+            className="text-gray-600 hover:text-indigo-500 active:text-indigo-700"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-indigo-500 active:text-indigo-700"
+          >
+            About
+          </a>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-indigo-500 active:text-indigo-700"
+          >
+            Products
+          </a>
+          <a
+            href="#"
+            className="text-gray-600 hover:text-indigo-500 active:text-indigo-700"
+          >
+            Contact
+          </a>
+        </nav>
+        <button className="inline-flex items-center gap-2 rounded-lg bg-gray-200 p-2 font-semibold text-gray-500 hover:bg-gray-300 active:text-gray-700 md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+          </svg>
+          Menu
+        </button>
+      </div>
+      <div className="tracking-wider text-center italic my-4 text-gray-700">
+        <span className="font-bold">D</span>ata-driven innovation,
+        <span className="font-bold"> O</span>ptimizing performance,
+        <span className="font-bold"> P</span>ioneering excellence,{" "}
+        <span className="font-bold"> E</span>mpowering growth
+      </div>
+    </header>
+  );
 };
 
 export default Header;

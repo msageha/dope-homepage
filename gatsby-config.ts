@@ -6,8 +6,9 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.yourdomain.tld`,
     author: `mzk`,
     description: `Welcome to "Dope, inc." homepage`,
+    image: "/images/logo.jpg",
   },
-  graphqlTypegen: true,
+  // graphqlTypegen: true,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -16,7 +17,9 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/`,
       },
     },
-    "gatsby-plugin-image",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
   ],
 }
 

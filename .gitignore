@@ -1,0 +1,20 @@
+# Gatsby files
+.cache/
+public/
+node_modules/
+src/gatsby-types.d.ts
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Build artifacts
+build/
+out/
+dist/
+*.zip
+*.tar.gz
+
+# Mac OS files
+.DS_Store
