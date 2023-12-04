@@ -1,15 +1,24 @@
+import _ from "lodash";
+
 type Map = {
   key: string;
-  class: string[];
+  value: string[];
 };
 
 export const SizeSetting: Map[] = [
-  { key: "large", class: ["text-base", "md:text-lg", "lg:text-xl"] },
-  { key: "medium", class: ["text-sm", "md:text-base", "lg:text-lg"] },
-  { key: "small", class: ["text-xs", "md:text-sm", "lg:text-base"] },
-  { key: "h1", class: ["text-2xl", "md:text-3xl", "lg:text-4xl"] },
-  { key: "h2", class: ["text-xl", "md:text-2xl", "lg:text-3xl"] },
-  { key: "h3", class: ["text-lg", "md:text-xl", "lg:text-2xl"] },
-  { key: "h4", class: ["text-base", "md:text-lg", "lg:text-xl"] },
-  { key: "p", class: ["text-base", "md:text-lg", "lg:text-xl"] },
+  { key: "small", value: ["text-base", "md:text-lg", "lg:text-xl"]},
+  { key: "medium", value: ["text-lg", "md:text-xl", "lg:text-2xl"] },
+  { key: "large", value: ["text-2xl", "md:text-3xl", "lg:text-4xl"] },
+  { key: "extra-large", value: ["text-3xl", "md:text-4xl", "lg:text-5xl"] },
 ];
+
+export function getSize(size: string): string {
+  const sizeMap = SizeSetting.find((map) => map.key === size);
+
+  if (!sizeMap) {
+    console.error(`Size "${size}" not found in SizeSetting`);
+    return "";
+  }
+  const classes = sizeMap.value;
+  return classes.join(" ");
+}

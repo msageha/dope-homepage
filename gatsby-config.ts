@@ -7,6 +7,7 @@ const config: GatsbyConfig = {
     author: `mzk`,
     description: `Welcome to "Dope, inc." homepage`,
     image: "/images/logo.jpg",
+    companyName: "Dope, inc.",
   },
   // graphqlTypegen: true,
   plugins: [

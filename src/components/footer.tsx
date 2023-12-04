@@ -1,26 +1,35 @@
 // src/components/footer.tsx
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import {
-  Twitter,
-  Twitch,
-  Instagram,
-  Facebook,
-  Youtube,
-  GitHub,
-} from "react-feather";
-import {
-  Container,
-  Flex,
-  FlexList,
-  Box,
-  Space,
-  NavLink,
-  Text,
-  IconLink,
-  VisuallyHidden,
-} from "./ui";
+import { graphql } from "gatsby";
+import { getSize } from "../utils/size";
 
-export default function Footer() {
-  return <footer>This is footer</footer>;
+interface FooterProps {
+    data: {
+        site: {
+            siteMetadata: {
+                companyName: string;
+            };
+        };
+    };
 }
+
+export default function Footer(props: FooterProps) {
+    const companyName = props.data.site.siteMetadata.companyName;
+    return (
+        <footer className="bg-gray-800 p-10">
+            <p className={`text-white text-center ${getSize("small")}`}>
+                &copy; 2023 {companyName} All rights reserved.
+            </p>
+        </footer>
+    );
+}
+
+export const query = graphql`
+    query SiteMetaData {
+        site {
+            siteMetadata {
+                companyName
+            }
+        }
+    }
+`;
