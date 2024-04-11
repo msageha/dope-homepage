@@ -17,8 +17,18 @@ export default function Footer(props: FooterProps) {
     const companyName = props.data.site.siteMetadata.companyName;
     return (
         <footer className="bg-gray-800 p-10">
-            <p className={`text-white text-center ${getSize("small")}`}>
-                &copy; 2023 {companyName} All rights reserved.
+            <p
+                className={`text-white flex justify-between ${getSize(
+                    "small"
+                )}`}
+            >
+                <p>
+                    <a href="/sitepolicy">免責事項</a>
+                </p>
+                <p>
+                    &copy; 2023 <a href="/">{companyName} </a>All rights
+                    reserved.
+                </p>
             </p>
         </footer>
     );

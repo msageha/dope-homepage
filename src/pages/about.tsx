@@ -44,7 +44,7 @@ const CompanyInfo = ({ companyName }: { companyName: string }) => {
         },
         {
             key: "事業内容",
-            value: "ITソリューションの提供、システム開発、データ解析",
+            value: "ITシステム開発、データ解析、コンサルティング業務",
         },
     ];
 

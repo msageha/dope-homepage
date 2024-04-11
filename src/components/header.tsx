@@ -25,6 +25,9 @@ const Header: React.FC = () => {
                     <a className={navItemClasses} href="/product">
                         Product
                     </a>
+                    <a className={navItemClasses} href="/order">
+                        Order
+                    </a>
                     <a className={navItemClasses} href="/contact">
                         Contact
                     </a>
