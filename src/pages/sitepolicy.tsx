@@ -17,6 +17,7 @@ interface SitePolicyProps {
 }
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
+const subTitleClasses = `mb-4 ${getSize("medium")} ${getColor("primary")}`;
 const descriptionClasses = `mb-8 ${getSize("small")} ${getColor("primary")}`;
 
 const ParagraphLayer = ({
@@ -29,7 +30,7 @@ const ParagraphLayer = ({
     console.log(description);
     return (
         <div className="container mx-auto my-8 px-10">
-            <h1 className={titleClasses}>{title}</h1>
+            <h2 className={subTitleClasses}>{title}</h2>
 
             <p
                 className={descriptionClasses}
@@ -68,6 +69,9 @@ export default function SitePolicy(props: SitePolicyProps) {
 
     return (
         <Layout>
+            <div className="text-center my-8">
+                <h1 className={titleClasses}>サイトポリシー</h1>
+            </div>
             <div className=" mx-auto max-w-screen-md">
                 {values.map(({ title, description }) => (
                     <ParagraphLayer title={title} description={description} />

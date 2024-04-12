@@ -21,7 +21,7 @@ interface HomepageProps {
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 
-const descriptionClasses = `mb-8 px-6 py-6 ${getSize("small")} ${getColor(
+const descriptionClasses = `mb-8 px-6 py-6 ${getSize("medium")} ${getColor(
     "primary"
 )}`;
 
