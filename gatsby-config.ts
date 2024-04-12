@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby"
+import { resolve } from "path"
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -17,6 +18,18 @@ const config: GatsbyConfig = {
         name: `src`,
         path: `${__dirname}/src/`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-S03DGSJDKT" // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true,
+          origin: "https://dope-inc.com",
+        },
+      }
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
