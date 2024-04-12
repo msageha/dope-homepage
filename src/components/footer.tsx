@@ -18,7 +18,7 @@ export default function Footer(props: FooterProps) {
     return (
         <footer className="bg-gray-800 p-10">
             <p
-                className={`text-white flex justify-between ${getSize(
+                className={`text-white md:flex md:justify-between ${getSize(
                     "small"
                 )}`}
             >
