@@ -10,13 +10,26 @@ interface HomepageProps {
         site: {
             siteMetadata: {
                 title: string;
-                description: string;
                 image: string;
                 siteUrl: string;
             };
         };
     };
 }
+
+export const Head = (props: HomepageProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeは、先進のデータ駆動技術を活用し、お客様のビジネスを効果的に支援します。革新的なアプローチにより、パフォーマンス最適化や事業成長を促進し、ニーズに合わせたカスタムソリューションを提供します。データサイエンスとテクノロジーを融合し、お客様の可能性を最大限に引き出します。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl}
+        />
+    );
+};
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 const subTitleClasses = `mb-4 ${getSize("medium")} ${getColor("primary")}`;
@@ -97,7 +110,8 @@ export default function Homepage(props: HomepageProps) {
     return (
         <Layout>
             <div className=" mx-auto max-w-screen-md">
-                {/* <div className="text-sm">text-sm</div>
+                {/* for SizeSetting
+                <div className="text-sm">text-sm</div>
                 <div className="text-base">text-base</div>
                 <div className="text-lg">text-lg</div>
                 <div className="text-xl">text-xl</div>
@@ -111,11 +125,6 @@ export default function Homepage(props: HomepageProps) {
         </Layout>
     );
 }
-
-// export const Head = (props: HomepageProps) => {
-//     const { siteMetadata } = props.data.site;
-//     return <SEOHead {...siteMetadata} />;
-// };
 
 export const query = graphql`
     query SiteMetaData {

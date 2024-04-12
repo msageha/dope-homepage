@@ -3,6 +3,33 @@ import Layout from "../components/Layout";
 import SEOHead from "../components/head";
 import { getSize } from "../utils/size";
 import { getColor } from "../utils/color";
+import { graphql } from "gatsby";
+
+interface ProductProps {
+    data: {
+        site: {
+            siteMetadata: {
+                title: string;
+                image: string;
+                siteUrl: string;
+            };
+        };
+    };
+}
+
+export const Head = (props: ProductProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeの最新プロダクトは、生成AIやビッグデータを活用し、革新的なサービスを提供することを目指しています。現在開発中のこのプロダクトは、未来を形作るテクノロジーを駆使して、ユーザーに革新的な体験をお届けします。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl + "/product"}
+        />
+    );
+};
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 const subTitleClasses = `mb-4 ${getSize("medium")} ${getColor("primary")}`;
@@ -37,3 +64,15 @@ export default function Page() {
         </Layout>
     );
 }
+
+export const query = graphql`
+    query SiteMetaData {
+        site {
+            siteMetadata {
+                title
+                image
+                siteUrl
+            }
+        }
+    }
+`;

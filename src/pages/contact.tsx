@@ -4,9 +4,35 @@ import SEOHead from "../components/head";
 import { getSize } from "../utils/size";
 import { getColor } from "../utils/color";
 import { ChangeEvent, useState } from "react";
-
+import { graphql } from "gatsby";
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("secondary")}`;
 const descriptionClasses = `mb-4 ${getSize("small")} ${getColor("secondary")}`;
+
+interface ContractProps {
+    data: {
+        site: {
+            siteMetadata: {
+                title: string;
+                image: string;
+                siteUrl: string;
+            };
+        };
+    };
+}
+
+export const Head = (props: ContractProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeへのお問い合わせページです。AIソリューション、ITコンサルティング、データサイエンス、Webサイト・スマホアプリ開発など、様々なご相談を受け付けています。お気軽にお問い合わせください。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl + "/contact"}
+        />
+    );
+};
 
 const ContactForm = () => {
     return (
@@ -37,9 +63,19 @@ const ContactForm = () => {
 export default function Page() {
     return (
         <Layout>
-            <>
-                <ContactForm />
-            </>
+            <ContactForm />
         </Layout>
     );
 }
+
+export const query = graphql`
+    query SiteMetaData {
+        site {
+            siteMetadata {
+                title
+                image
+                siteUrl
+            }
+        }
+    }
+`;

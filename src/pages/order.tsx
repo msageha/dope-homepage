@@ -8,13 +8,13 @@ import { getColor } from "../utils/color";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-interface HomepageProps {
+interface OrderProps {
     data: {
         site: {
             siteMetadata: {
                 title: string;
-                description: string;
                 image: string;
+                siteUrl: string;
             };
         };
         ai: {
@@ -34,6 +34,20 @@ interface HomepageProps {
         };
     };
 }
+
+export const Head = (props: OrderProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeは、研究者・専門家によるAIソリューション、ITコンサルティング・データサイエンス、Webサイト、スマホアプリ開発など、お客様のニーズに合わせた高品質な受託開発サービスを提供しています。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl + "/order"}
+        />
+    );
+};
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 const subTitleClasses = `mb-4 ${getSize("medium")} ${getColor("primary")}`;
@@ -66,8 +80,7 @@ const ParagraphLayer = ({
     );
 };
 
-export default function Order(props: HomepageProps) {
-    const { siteMetadata } = props.data.site;
+export default function Order(props: OrderProps) {
     const aiImage = props.data.ai.childImageSharp.gatsbyImageData;
     const itImage = props.data.it.childImageSharp.gatsbyImageData;
     const systemImage = props.data.system.childImageSharp.gatsbyImageData;
@@ -114,8 +127,8 @@ export const query = graphql`
         site {
             siteMetadata {
                 title
-                description
                 image
+                siteUrl
             }
         }
         ai: file(relativePath: { eq: "images/ai.png" }) {

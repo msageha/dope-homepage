@@ -5,13 +5,11 @@ import SEOHead from "../components/head";
 import { getSize } from "../utils/size";
 import { getColor } from "../utils/color";
 
-interface HomepageProps {
+interface AboutProps {
     data: {
         site: {
             siteMetadata: {
-                companyName: string;
                 title: string;
-                description: string;
                 image: string;
                 siteUrl: string;
             };
@@ -19,13 +17,27 @@ interface HomepageProps {
     };
 }
 
+export const Head = (props: AboutProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeは、2023年11月22日に設立されたIT企業です。ITシステム開発、データ解析、コンサルティング業務を専門としています。革新的なソリューションを提供し、お客様のビジネスをサポートします。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl + "/about"}
+        />
+    );
+};
+
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 
 const descriptionClasses = `mb-8 px-6 py-6 ${getSize("medium")} ${getColor(
     "primary"
 )}`;
 
-const CompanyInfo = ({ companyName }: { companyName: string }) => {
+const CompanyInfo = () => {
     const companyData: {
         key: string;
         value: string;
@@ -65,14 +77,12 @@ const CompanyInfo = ({ companyName }: { companyName: string }) => {
     );
 };
 
-export default function Homepage(props: HomepageProps) {
+export default function About(props: AboutProps) {
     const { siteMetadata } = props.data.site;
 
     return (
         <Layout>
-            <>
-                <CompanyInfo companyName={siteMetadata.companyName} />
-            </>
+            <CompanyInfo />
         </Layout>
     );
 }
@@ -81,9 +91,7 @@ export const query = graphql`
     query SiteMetaData {
         site {
             siteMetadata {
-                companyName
                 title
-                description
                 image
                 siteUrl
             }

@@ -11,10 +11,26 @@ interface SitePolicyProps {
             siteMetadata: {
                 title: string;
                 description: string;
+                image: string;
+                siteUrl: string;
             };
         };
     };
 }
+
+export const Head = (props: SitePolicyProps) => {
+    const { siteMetadata } = props.data.site;
+    const description =
+        "株式会社Dopeのウェブサイトは、利用規約に同意いただいた上でご利用ください。個人情報の取り扱いには厳重な注意を払っています。詳細については、以下のポリシーをご参照ください。。";
+    return (
+        <SEOHead
+            title={siteMetadata.title}
+            description={description}
+            image={siteMetadata.image}
+            url={siteMetadata.siteUrl + "/sitepolicy"}
+        />
+    );
+};
 
 const titleClasses = `mb-4 ${getSize("large")} ${getColor("primary")}`;
 const subTitleClasses = `mb-4 ${getSize("medium")} ${getColor("primary")}`;
