@@ -1,6 +1,5 @@
 import { GatsbyNode } from "gatsby"
-
-import path from "path";
+import path , { resolve } from "path";
 
 
 
@@ -18,5 +17,17 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions, graphql 
   createSlice({
     id: "Footer",
     component: path.resolve("src/components/footer.tsx"),
+  });
+};
+
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, `src`),
+      },
+    },
   });
 };
