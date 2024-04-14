@@ -11,13 +11,11 @@ const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   // await tagsPage(createPage, graphql);
 
   createSlice({
-    id: "Header",
-    component: path.resolve("src/components/Header.tsx"),
+    id: "header",
+    component: path.resolve("src/components/header.tsx"),
   });
   createSlice({
-    id: "Footer",
-    component: path.resolve("src/components/Footer.tsx"),
+    id: "footer",
+    component: path.resolve("src/components/footer.tsx"),
   });
 };
-
-export { createPages }
