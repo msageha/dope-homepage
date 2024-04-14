@@ -6,7 +6,7 @@ type Map = {
 };
 
 export const SizeSetting: Map[] = [
-  { key: "small", value: ["text-base", "md:text-lg", "lg:text-xl"]},
+  { key: "small", value: ["text-base", "md:text-lg", "lg:text-xl"] },
   { key: "medium", value: ["text-lg", "md:text-xl", "lg:text-2xl"] },
   { key: "large", value: ["text-2xl", "md:text-3xl", "lg:text-4xl"] },
   { key: "extra-large", value: ["text-3xl", "md:text-4xl", "lg:text-5xl"] },

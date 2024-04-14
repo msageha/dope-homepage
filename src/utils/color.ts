@@ -50,8 +50,11 @@ export const ColorSetting: Map[] = [
   // },
 ];
 
-export function getColor(size: string, hover?: boolean, active?: boolean): string {
-
+export function getColor(
+  size: string,
+  hover?: boolean,
+  active?: boolean,
+): string {
   const colorMap = ColorSetting.find((map) => map.key === size);
 
   if (!colorMap) {
