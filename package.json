@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "gatsby": "^5.13.4",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-sharp": "^5.12.3",
@@ -38,14 +39,10 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "gatsby-plugin-tsconfig-paths": "^1.0.6",
     "gh-pages": "^6.1.1",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.3",
     "ts-loader": "^9.5.1",
-    "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "^5.4.5",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.4.5"
   }
 }
