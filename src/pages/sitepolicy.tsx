@@ -43,7 +43,6 @@ const ParagraphLayer = ({
     title: string;
     description: string;
 }) => {
-    console.log(description);
     return (
         <div className="container mx-auto my-8 px-10">
             <h2 className={subTitleClasses}>{title}</h2>

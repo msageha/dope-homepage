@@ -30,15 +30,6 @@ const config: GatsbyConfig = {
         },
       }
     },
-    {
-      resolve: `gatsby-plugin-alias-imports`,
-      options: {
-        alias: {
-          "@": "src",
-        },
-        extensions: ["js", "jsx", "ts", "tsx"],
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images
