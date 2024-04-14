@@ -62,31 +62,33 @@ const Header: React.FC = () => {
                         }
                     >
                         <ul className="flex flex-col p-4 m-8 bg-gray-200 rounded-md font-semibold rtl:space-x-reverse text-gray-500 ">
-                            <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a href="/" className="mx-2">
+                            <a href="/" className="mx-2">
+                                <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
                                     Home
-                                </a>
-                            </li>
-                            <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a href="/about" className="mx-2">
+                                </li>
+                            </a>
+
+                            <a href="/about" className="mx-2">
+                                <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
                                     About
-                                </a>
-                            </li>
-                            <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a href="/product" className="mx-2">
+                                </li>
+                            </a>
+                            <a href="/product" className="mx-2">
+                                <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
                                     Product
-                                </a>
-                            </li>
-                            <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a href="/order" className="mx-2">
-                                    Order
-                                </a>
-                            </li>
-                            <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a href="/contact" className="mx-2">
+                                </li>
+                            </a>
+
+                            <a href="/order" className="mx-2">
+                                <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700"></li>
+                                Order
+                            </a>
+
+                            <a href="/contact" className="mx-2">
+                                <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
                                     Contact
-                                </a>
-                            </li>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                 </div>
