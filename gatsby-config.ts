@@ -30,6 +30,12 @@ const config: GatsbyConfig = {
         },
       }
     },
+    {
+      resolve: `gatsby-plugin-tsconfig-paths`,
+      options: {
+        configFile: `${__dirname}/tsconfig.json`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`, // Needed for dynamic images

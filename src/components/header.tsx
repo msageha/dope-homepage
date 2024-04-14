@@ -83,7 +83,9 @@ const Header: React.FC = () => {
                                 </a>
                             </li>
                             <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-                                <a className="mx-2">Contact</a>
+                                <a href="/contact" className="mx-2">
+                                    Contact
+                                </a>
                             </li>
                         </ul>
                     </div>
