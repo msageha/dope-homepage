@@ -37,6 +37,9 @@ jobs:
       - name: Check Format
         run: npm run format
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Build
         run: npm run build
 
