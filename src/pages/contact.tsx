@@ -36,7 +36,7 @@ export const Head = (props: ContractProps) => {
 
 const ContactForm = () => {
     return (
-        <div className="my-10 justify-center sm:py-12">
+        <div className="my-20 justify-center py-12">
             <div className="relative py-3 sm:max-w-3xl sm:mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-900 to-indigo-200 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
                 <div className="text-white relative py-10 bg-gray-800 shadow-lg sm:rounded-3xl ">

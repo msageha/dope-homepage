@@ -61,7 +61,7 @@ const CompanyInfo = () => {
     ];
 
     return (
-        <div className="max-w-3xl mx-auto py-10">
+        <div className="max-w-3xl mx-auto p-10">
             <h1 className={titleClasses}>会社概要</h1>
             <table className="min-w-full divide-y divide-gray-200">
                 <tbody className="divide-y divide-gray-400">

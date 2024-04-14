@@ -109,7 +109,7 @@ export default function Homepage(props: HomepageProps) {
 
     return (
         <Layout>
-            <div className=" mx-auto max-w-screen-md">
+            <div className="mx-auto max-w-screen-md">
                 {/* for SizeSetting
                 <div className="text-sm">text-sm</div>
                 <div className="text-base">text-base</div>
