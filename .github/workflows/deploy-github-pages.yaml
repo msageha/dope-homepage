@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     concurrency:
@@ -20,6 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.10'
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: gatsby
 
       - name: Cache Dependency
         uses: actions/cache@v4
