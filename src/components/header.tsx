@@ -81,10 +81,8 @@ const Header: React.FC = () => {
 
                             <a href="/order" className="mx-2">
                                 <li className="block rounded py-2 hover:bg-gray-300 active:text-gray-700">
-
-                                Order
+                                    Order
                                 </li>
-                                
                             </a>
 
                             <a href="/contact" className="mx-2">
