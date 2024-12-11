@@ -16,10 +16,6 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
 
 export const createPages: GatsbyNode["createPages"] = async ({ actions, graphql }) => {
   const { createPage, createSlice} = actions;
-  
-  // await pagination(createPage, graphql);
-  // await detailPage(createPage, graphql);
-  // await tagsPage(createPage, graphql);
 
   createSlice({
     id: "Header",

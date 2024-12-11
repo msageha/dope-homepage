@@ -12,11 +12,11 @@ export const SizeSetting: Map[] = [
     { key: 'extra-large', value: ['text-3xl', 'md:text-4xl', 'lg:text-5xl'] },
 ];
 
-export function getSize(size: string): string {
-    const sizeMap = SizeSetting.find((map) => map.key === size);
+export function getSize(sizeKey: string): string {
+    const sizeMap = SizeSetting.find((map) => map.key === sizeKey);
 
     if (!sizeMap) {
-        console.error(`Size "${size}" not found in SizeSetting`);
+        console.error(`Size "${sizeKey}" not found in SizeSetting`);
         return '';
     }
     const classes = sizeMap.value;

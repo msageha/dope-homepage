@@ -4,6 +4,8 @@ export const Logo = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Company Logo"
             version="1.1"
             viewBox="0.00 0.00 700.00 400.00"
             className="max-h-32"
