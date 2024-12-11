@@ -77,9 +77,10 @@ const CompanyValues = () => {
     return (
         <div className="container mx-auto my-8 px-10">
             <h1 className={titleClasses}>Values</h1>
+
             <p className={descriptionClasses}>
                 　我々はDopeという社名の４つの頭文字を使った企業バリューを掲げています。
-                <br />　
+                <br />
                 <span className="font-semibold">Discover（発見する）</span>、
                 <span className="font-semibold">Optimize（最適化する）</span>、
                 <span className="font-semibold">Pioneer（先駆ける）</span>、
@@ -110,15 +111,6 @@ export default function Homepage(props: HomepageProps) {
     return (
         <Layout>
             <div className="mx-auto max-w-screen-md">
-                {/* for SizeSetting
-                <div className="text-sm">text-sm</div>
-                <div className="text-base">text-base</div>
-                <div className="text-lg">text-lg</div>
-                <div className="text-xl">text-xl</div>
-                <div className="text-2xl">text-2xl</div>
-                <div className="text-3xl">text-3xl</div>
-                <div className="text-4xl">text-4xl</div>
-                <div className="text-5xl">text-5xl</div> */}
                 <CompanyMission />
                 <CompanyValues />
             </div>
