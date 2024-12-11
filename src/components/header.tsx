@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Logo } from '@/components/Logo';
-import { getColor } from '@/utils/color';
-import { getSize } from '@/utils/size';
+import { Logo } from '../components/Logo';
+import { getColor } from '../utils/color';
+import { getSize } from '../utils/size';
 
 const Header: React.FC = () => {
     const navItemClasses =

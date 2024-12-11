@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
-import SEOHead from '@/components/head';
-import { getColor } from '@/utils/color';
-import { getSize } from '@/utils/size';
+import Layout from '../components/Layout';
+import SEOHead from '../components/head';
+import { getColor } from '../utils/color';
+import { getSize } from '../utils/size';
 
 interface AboutProps {
     data: {

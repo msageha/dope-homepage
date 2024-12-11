@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
-import SEOHead from '@/components/head';
-import { getColor } from '@/utils/color';
-import { getSize } from '@/utils/size';
+import Layout from '../components/Layout';
+import SEOHead from '../components/head';
+import { getColor } from '../utils/color';
+import { getSize } from '../utils/size';
 
 const titleClasses = `mb-4 ${getSize('large')} ${getColor('secondary')}`;
 const descriptionClasses = `mb-4 ${getSize('small')} ${getColor('secondary')}`;

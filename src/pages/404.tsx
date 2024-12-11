@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { HeadFC, Link, PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
-import SEOHead from '@/components/head';
+import SEOHead from '../components/head';
 
 interface NotFoundProps {
     data: {

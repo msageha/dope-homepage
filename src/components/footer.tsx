@@ -1,7 +1,7 @@
 // src/components/footer.tsx
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { getSize } from '@/utils/size';
+import { getSize } from '../utils/size';
 
 interface FooterProps {
     data: {
